@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "csv-utf8"
+version = "0.1.0"
+description = "Rewrite non-UTF-8 CSV files as UTF-8 in place, reporting every action"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ian Solberg" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Text Processing :: Filters",
+]
+dependencies = []
+
+[project.optional-dependencies]
+detect = ["charset-normalizer>=3.0"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+ensure-utf8 = "csv_utf8.ensure_utf8:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/csv_utf8"]
