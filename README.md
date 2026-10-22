@@ -3,6 +3,16 @@
 The data surface: validation, checks, and transforms that make messy data
 usable before anything else touches it.
 
+## Tools
+
+Standalone files in `tools/`, plain Python 3 (tested on 3.13), each with a
+`--self-test`:
+
+| tool | what it does for you |
+|---|---|
+| `union-rows.py` | Recovers the rows an append-only CSV or TSV lost when a git merge took one side, by appending only the rows the other revision has. Refuses if the headers differ. |
+| `run-notebook.py` | Executes a Jupyter notebook in place with keys injected from an env file and your home path scrubbed from the output, or refuses. |
+
 ## What is here
 
 `csv-utf8` rewrites non-UTF-8 CSV files as UTF-8 in place. Built because
@@ -41,8 +51,8 @@ UTF-8 without a BOM.
   Python but not a copy of this repo.
 - The naming convention is `<domain>-kit`. Siblings: `dev-kit` (editor and
   tooling config), `cloud-kit` (syncing between machines), `research-kit`
-  (the analysis framework and API wrappers), `ai-kit` (the AI tooling
-  umbrella).
+  (the analysis framework and API wrappers), `ai-kit` (tools for AI coding
+  agents).
 
 ## Start here
 
