@@ -12,6 +12,7 @@ Standalone files in `tools/`, plain Python 3 (tested on 3.13), each with a
 |---|---|
 | `union-rows.py` | Recovers the rows an append-only CSV or TSV lost when a git merge took one side, by appending only the rows the other revision has. Refuses if the headers differ. |
 | `run-notebook.py` | Executes a Jupyter notebook in place with keys injected from an env file and your home path scrubbed from the output, or refuses. |
+| `shrink-image.py` | Shrinks images to a maximum width, height or file size, strips EXIF by default, and keeps the original if the result would be larger. |
 
 ## What is here
 
